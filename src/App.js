@@ -1,19 +1,16 @@
 import './App.css';
-import Pasatiempos from './Componentes/Pasatiempos';
 import Inicio from './Componentes/Inicio';
 import AppsDestacadas from './Componentes/AppsDestacadas';
+import Pasatiempos from './Componentes/Pasatiempos';
 
 const App = () => {
   return (
-    <div className="contenedor-app">
+    <div>
+      {/* Hero con nav integrada y video de fondo */}
+      <Inicio />
 
-      <header className="contenedor-cabecera">
-        <h1>Hoal</h1>
-      </header>
-
-
-      <main className="contenedor-main">
-        <Inicio />
+      {/* Resto de secciones */}
+      <main style={{ background: 'var(--background)' }}>
         <AppsDestacadas />
         <Pasatiempos />
       </main>
@@ -21,9 +18,8 @@ const App = () => {
       <footer className="contenedor-footer">
         <p>Sígueme en mis redes sociales</p>
       </footer>
-
     </div>
   );
-}
+};
 
 export default App;
