@@ -6,13 +6,18 @@ import Pasatiempos from './Componentes/Pasatiempos';
 const App = () => {
   return (
     <div>
-      {/* Hero con nav integrada y video de fondo */}
-      <Inicio />
+      <section id="inicio">
+        <Inicio />
+      </section>
 
-      {/* Resto de secciones */}
       <main style={{ background: 'var(--background)' }}>
-        <AppsDestacadas />
-        <Pasatiempos />
+        <section id="apps-destacadas">
+          <AppsDestacadas />
+        </section>
+
+        <section id="pasatiempos">
+          <Pasatiempos />
+        </section>
       </main>
 
       <footer className="contenedor-footer">

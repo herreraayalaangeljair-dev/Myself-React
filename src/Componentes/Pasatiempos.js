@@ -16,73 +16,144 @@ import King from "../Imagenes/King.webp";
 import ingles from "../Imagenes/ingles.svg";
 import Korean from "../Imagenes/Korean.webp";
 import chino from "../Imagenes/chino.png";
+import Navigacion from "./Navegacion";
 
 const bookSlides = [
-    { id: 1,  src: It,         alt: "It" },
-    { id: 2,  src: TheFault,   alt: "The Fault in Our Stars" },
-    { id: 3,  src: ElVisitante,alt: "El Visitante" },
-    { id: 4,  src: Princefrom, alt: "Prince" },
-    { id: 5,  src: habits,     alt: "Atomic Habits" },
-    { id: 6,  src: psicologia, alt: "Psicología del Dinero" },
-    { id: 7,  src: RichDad,    alt: "Padre Rico Padre Pobre" },
-    { id: 8,  src: Gerardo1,   alt: "Gerardo 1" },
-    { id: 9,  src: Gerardo2,   alt: "Gerardo 2" },
-    { id: 10, src: Gerardo3,   alt: "Gerardo 3" },
-    { id: 11, src: Gerardo4,   alt: "Gerardo 4" },
-    { id: 12, src: Sen,        alt: "Sen" },
-    { id: 13, src: King,       alt: "King" },
+  { id: 1, src: It, alt: "It" },
+  { id: 2, src: TheFault, alt: "The Fault in Our Stars" },
+  { id: 3, src: ElVisitante, alt: "El Visitante" },
+  { id: 4, src: Princefrom, alt: "Prince" },
+  { id: 5, src: habits, alt: "Atomic Habits" },
+  { id: 6, src: psicologia, alt: "Psicología del Dinero" },
+  { id: 7, src: RichDad, alt: "Padre Rico Padre Pobre" },
+  { id: 8, src: Gerardo1, alt: "Gerardo 1" },
+  { id: 9, src: Gerardo2, alt: "Gerardo 2" },
+  { id: 10, src: Gerardo3, alt: "Gerardo 3" },
+  { id: 11, src: Gerardo4, alt: "Gerardo 4" },
+  { id: 12, src: Sen, alt: "Sen" },
+  { id: 13, src: King, alt: "King" },
 ];
 
 const Pasatiempos = () => {
-    return (
-        <div className="contenedor-pasatiempos">
+  return (
+    <PasatiemposContainer>
 
-            <h1>Mis Pasatiempos :)</h1>
+      <NavWrapper>
+        <Navigacion />
+      </NavWrapper>
 
-            <div className="contenedor-idiomas">
-                <h2>Idiomas</h2>
-                <p>Actualmente estoy aprendiendo varios idiomas. De los cuales, el coreano es el idioma que más me gusta.</p>
+      <Title>Mis Pasatiempos :)</Title>
 
-                <LanguagesList>
-                    <FlagItem>
-                        <img src={ingles} alt="Inglés" />
-                    </FlagItem>
+      <Section>
+        <SectionTitle>Idiomas</SectionTitle>
+        <Description>Actualmente estoy aprendiendo varios idiomas. De los cuales, el coreano es el idioma que más me gusta.</Description>
 
-                    <FlagItem>
-                        <img src={Korean} alt="Coreano" />
-                    </FlagItem>
+        <LanguagesList>
+          <FlagItem>
+            <img src={ingles} alt="Inglés" />
+          </FlagItem>
 
-                    <FlagItem>
-                        <img src={chino} alt="Chino" />
-                    </FlagItem>
-                </LanguagesList>
-            </div>
+          <FlagItem>
+            <img src={Korean} alt="Coreano" />
+          </FlagItem>
 
-            <div className="contenedor-lectura">
-                <h2>Lectura</h2>
-                <p>
-                    Fuera de la tecnología, me la paso leyendo. Mis géneros favoritos son la fantasía y el terror,
-                    aunque también le pongo empeño a la educación financiera.
-                </p>
+          <FlagItem>
+            <img src={chino} alt="Chino" />
+          </FlagItem>
+        </LanguagesList>
+      </Section>
 
-                <ThreeDImageCarousel
-                    slides={bookSlides}
-                    itemCount={5}
-                    autoplay={true}
-                    delay={4}
-                    pauseOnHover={true}
-                />
-            </div>
-        </div>
-    );
+      <Section style={{ marginBottom: 0 }}>
+        <SectionTitle>Lectura</SectionTitle>
+        <Description>
+          Fuera de la tecnología, me la paso leyendo. Mis géneros favoritos son la fantasía y el terror,
+          aunque también le pongo empeño a la educación financiera.
+        </Description>
+
+        <ThreeDImageCarousel
+          slides={bookSlides}
+          itemCount={5}
+          autoplay={true}
+          delay={4}
+          pauseOnHover={true}
+        />
+      </Section>
+    </PasatiemposContainer>
+  );
 };
+
+const PasatiemposContainer = styled.section`
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 20px 24px 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--border);
+
+  @media (min-width: 768px) {
+    padding: 20px 48px 140px;
+  }
+`;
+
+const NavWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 40px;
+`;
+
+const Title = styled.h1`
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 70px;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+`;
+
+const Section = styled.div`
+  width: 100%;
+  max-width: 70rem;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 48px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    padding: 48px;
+  }
+`;
+
+const SectionTitle = styled.h2`
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+`;
+
+const Description = styled.p`
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 38rem;
+  margin-bottom: 28px;
+`;
 
 const LanguagesList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  margin-top: 12px;
 `;
 
 const FlagItem = styled.div`

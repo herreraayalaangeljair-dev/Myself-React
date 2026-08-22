@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import Navigation from './Navegacion';
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260801_001207_ec20d138-aa45-4b2b-ab8c-bdc71607f240.mp4';
@@ -17,14 +17,16 @@ const AppsDestacadas = () => {
         aria-hidden="true"
       />
 
-
+      <NavWrapper>
+        <Navigation />
+      </NavWrapper>
 
       {/* ── Centered Content Group ── */}
       <ContentGroup>
         <Heading>404</Heading>
         <Divider />
         <Message>
-          Explora todos mis proyectos y su código fuente en mi GitHub.
+          Explora todos mis proyectos y su código fuente en mi <a href="https://github.com/herreraayalaangeljair-dev" target="_blank" rel="noopener noreferrer"> GitHub</a>.
         </Message>
       </ContentGroup>
     </Container>
@@ -56,37 +58,12 @@ const BackgroundVideo = styled.video`
   opacity: 1;
 `;
 
-const HeaderLogo = styled.div`
+const NavWrapper = styled.div`
   position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 233px;
-  height: 40px;
-  transform-origin: center;
-
-  @media (max-width: 640px) {
-    top: 32px;
-    transform: translateX(-50%) scale(0.75);
-  }
-`;
-
-const Mark = styled.svg`
-  width: 54px;
-  height: 40px;
-  flex-shrink: 0;
-`;
-
-const Logotype = styled.svg`
-  width: 165px;
-  height: 100px;
-  margin-left: 14px;
-  flex-shrink: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
 `;
 
 const ContentGroup = styled.div`

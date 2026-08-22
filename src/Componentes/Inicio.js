@@ -1,60 +1,44 @@
 import styled from 'styled-components';
+import Navigacion from './Navegacion';
 
 const VIDEO_URL =
-    'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4';
-
-const NAV_LINKS = ['Studio', 'About', 'Journal', 'Reach Us'];
+  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4';
 
 const Inicio = () => {
-    return (
-        <HeroWrapper>
-            {/* ── Video Background ── */}
-            <BgVideo
-                src={VIDEO_URL}
-                autoPlay
-                loop
-                muted
-                playsInline
-            />
+  return (
+    <HeroWrapper>
+      {/* ── Video Background ── */}
+      <BgVideo
+        src={VIDEO_URL}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-            {/* ── Navigation ── */}
-            <Nav>
-                <NavInner>
-                    <Logo>
-                        Herrera Jair
-                    </Logo>
+      {/* ── Navigation ── */}
+      <Navigacion />
 
-                    <NavLinks>
-                        <NavLink $active>Inicio</NavLink>
-                        <NavLink $active>App Destacadas</NavLink>
-                        <NavLink $active>Pasatiempos</NavLink>
-                    </NavLinks>
+      {/* ── Hero Content ── */}
+      <HeroContent>
+        <HeroTitle className="animate-fade-rise">
+          Si{' '}
+          <em className="not-italic" style={{ color: 'var(--muted-foreground)' }}>
+            lo
+          </em>{' '}
+          puedes imaginar{' '}
+          <em className="not-italic" style={{ color: 'var(--muted-foreground)' }}>
+            lo
+          </em>{' '}
+          puedes crear{' '}
+        </HeroTitle>
 
-                </NavInner>
-            </Nav>
-
-            {/* ── Hero Content ── */}
-            <HeroContent>
-                <HeroTitle className="animate-fade-rise">
-                    Si{' '}
-                    <em className="not-italic" style={{ color: 'var(--muted-foreground)' }}>
-                        lo
-                    </em>{' '}
-                    puedes imaginar{' '}
-                    <em className="not-italic" style={{ color: 'var(--muted-foreground)' }}>
-                        lo
-                    </em>
-                    puedes crear{' '}
-                </HeroTitle>
-
-                <HeroSub className="animate-fade-rise-delay">
-                    Esta página fue desarrollada con propósito de presentación propia.
-                </HeroSub>
-
-
-            </HeroContent>
-        </HeroWrapper>
-    );
+        <HeroSub className="animate-fade-rise-delay">
+          Esta página fue desarrollada con propósito de presentación propia.
+        </HeroSub>
+      </HeroContent>
+    </HeroWrapper>
+  );
 };
 
 /* ── Styled Components ──────────────────────────────────────── */
@@ -65,7 +49,7 @@ const HeroWrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: var(--background);
 `;
 
@@ -77,55 +61,6 @@ const BgVideo = styled.video`
   object-fit: cover;
   z-index: 0;
 `;
-
-const Nav = styled.nav`
-  position: relative;
-  z-index: 10;
-  width: 100%;
-`;
-
-const NavInner = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 1.5rem 2rem;
-`;
-
-const Logo = styled.span`
-  font-family: var(--font-display);
-  font-size: 1.875rem;
-  letter-spacing: -0.025em;
-  color: var(--foreground);
-  font-weight: 400;
-  line-height: 1;
-  user-select: none;
-`;
-
-const NavLinks = styled.div`
-  display: none;
-  gap: 2rem;
-  align-items: center;
-
-  @media (min-width: 768px) {
-    display: flex;
-  }
-`;
-
-const NavLink = styled.a`
-  font-size: 0.875rem;
-  color: ${({ $active }) => ($active ? 'var(--foreground)' : 'var(--muted-foreground)')};
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: var(--foreground);
-  }
-`;
-
 
 
 const HeroContent = styled.div`
