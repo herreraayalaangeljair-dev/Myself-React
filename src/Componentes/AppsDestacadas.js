@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Navigation from './Navegacion';
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260801_001207_ec20d138-aa45-4b2b-ab8c-bdc71607f240.mp4';
@@ -17,9 +16,6 @@ const AppsDestacadas = () => {
         aria-hidden="true"
       />
 
-      <NavWrapper>
-        <Navigation />
-      </NavWrapper>
 
       {/* ── Centered Content Group ── */}
       <ContentGroup>
@@ -56,14 +52,6 @@ const BackgroundVideo = styled.video`
   object-fit: cover;
   z-index: 0;
   opacity: 1;
-`;
-
-const NavWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
 `;
 
 const ContentGroup = styled.div`

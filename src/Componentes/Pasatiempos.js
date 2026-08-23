@@ -16,7 +16,6 @@ import King from "../Imagenes/King.webp";
 import ingles from "../Imagenes/ingles.svg";
 import Korean from "../Imagenes/Korean.webp";
 import chino from "../Imagenes/chino.png";
-import Navigacion from "./Navegacion";
 
 const bookSlides = [
   { id: 1, src: It, alt: "It" },
@@ -37,11 +36,6 @@ const bookSlides = [
 const Pasatiempos = () => {
   return (
     <PasatiemposContainer>
-
-      <NavWrapper>
-        <Navigacion />
-      </NavWrapper>
-
       <Title>Mis Pasatiempos :)</Title>
 
       <Section>
@@ -85,7 +79,7 @@ const Pasatiempos = () => {
 const PasatiemposContainer = styled.section`
   background-color: var(--background);
   color: var(--foreground);
-  padding: 20px 24px 100px;
+  padding: 100px 24px 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -93,13 +87,8 @@ const PasatiemposContainer = styled.section`
   border-top: 1px solid var(--border);
 
   @media (min-width: 768px) {
-    padding: 20px 48px 140px;
+    padding: 120px 48px 140px;
   }
-`;
-
-const NavWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 40px;
 `;
 
 const Title = styled.h1`

@@ -1,10 +1,56 @@
-/* App.css — estilos de secciones secundarias */
+/* App.css — Estilos del Footer y Redes Sociales */
 
 .contenedor-footer {
   text-align: center;
-  padding: 2rem;
+  padding: 3.5rem 1.5rem;
   color: var(--muted-foreground);
-  font-size: 0.875rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
   border-top: 1px solid var(--border);
   background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.contenedor-footer p {
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+
+.contenedor-redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contenedor-redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.contenedor-redes a:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 22px rgba(225, 48, 108, 0.4);
+  border-color: transparent;
 }

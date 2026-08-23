@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Navigacion from './Navegacion';
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4';
@@ -16,8 +15,6 @@ const Inicio = () => {
         playsInline
       />
 
-      {/* ── Navigation ── */}
-      <Navigacion />
 
       {/* ── Hero Content ── */}
       <HeroContent>
@@ -72,7 +69,7 @@ const HeroContent = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 90px 1.5rem;
+  padding: 120px 1.5rem 90px;
 `;
 
 const HeroTitle = styled.h1`

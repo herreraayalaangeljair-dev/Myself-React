@@ -1,18 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-/**
- * ThreeDImageCarousel
- * API compatible con lightswind ThreeDImageCarousel
- *
- * Props:
- *   slides       - Array de { id, src, href? }
- *   itemCount    - 3 | 5  (items visibles, default 5)
- *   autoplay     - boolean (default false)
- *   delay        - segundos entre slides (default 3)
- *   pauseOnHover - boolean (default true)
- *   className    - clase CSS adicional
- */
+
 const ThreeDImageCarousel = ({
   slides = [],
   itemCount = 5,
