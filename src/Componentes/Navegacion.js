@@ -9,7 +9,7 @@ const Navigacion = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 40);
 
-            const sections = ['inicio', 'apps-destacadas', 'pasatiempos'];
+            const sections = ['inicio', 'apps-destacadas', 'pasatiempos', 'mapa-curricular'];
             for (const id of [...sections].reverse()) {
                 const el = document.getElementById(id);
                 if (el && window.scrollY >= el.offsetTop - 120) {
@@ -31,6 +31,7 @@ const Navigacion = () => {
                     <NavLink href="#inicio" $active={active === 'inicio'}>Inicio</NavLink>
                     <NavLink href="#apps-destacadas" $active={active === 'apps-destacadas'}>Apps</NavLink>
                     <NavLink href="#pasatiempos" $active={active === 'pasatiempos'}>Pasatiempos</NavLink>
+                    <NavLink href="#mapa-curricular" $active={active === 'mapa-curricular'}>Mapa Curricular</NavLink>
                 </NavLinks>
             </NavInner>
         </Nav>

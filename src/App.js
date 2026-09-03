@@ -3,6 +3,7 @@ import Inicio from './Componentes/Inicio';
 import AppsDestacadas from './Componentes/AppsDestacadas';
 import Pasatiempos from './Componentes/Pasatiempos';
 import Navigacion from './Componentes/Navegacion';
+import MapaCurricular from './Componentes/MapaCurricular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -23,6 +24,10 @@ const App = () => {
 
         <section id="pasatiempos">
           <Pasatiempos />
+        </section>
+
+        <section id="mapa-curricular">
+          <MapaCurricular />
         </section>
       </main>
 
